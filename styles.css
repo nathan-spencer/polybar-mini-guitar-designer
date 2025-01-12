@@ -5,7 +5,25 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #333;
-  color: gainsboro
+  color: gainsboro;
+  overflow: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.color-picker-container {
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 3px rgba(255, 255, 255, 0.5);
+  overflow: auto;
 }
 
 .color-picker {
@@ -20,10 +38,8 @@ body {
 }
 
 #eleven {
-  transform: rotate(15deg);
-  margin: 100px 0px;
+  display: flex;
   gap: 10px;
-  box-shadow: 0 0 3px 3px rgba(255, 255, 255, 0.5);
 }
 
 #number-eleven {
@@ -78,20 +94,13 @@ body {
   align-self: flex-start;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
 .output-container {
   display: flex;
   align-items: flex-end;
+  margin: 0px 20px;
 }
 
-#copy-button {
+.icon-button {
   padding: 5px;
   font-size: 20px;
   font-weight: bold;

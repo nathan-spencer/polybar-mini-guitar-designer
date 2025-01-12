@@ -65,12 +65,12 @@ document.querySelectorAll(".color-picker").forEach((div) => {
   };
 });
 
+const numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
+
 const updateColorInfo = () => {
   const colorInfo = document.getElementById("color-info");
-  const colorPickers = document.querySelectorAll(".color-picker");
   let output = "";
 
-  const numbers = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"];
   numbers.forEach((number, index) => {
     const picker = document.getElementById(number);
     if (picker) {
@@ -104,3 +104,43 @@ document.querySelectorAll(".color-picker").forEach((div) => {
     originalClick(event);
   };
 });
+
+document.getElementById("import-button").onclick = () => {
+  const colorInfo = document.getElementById("color-info");
+  const colors = colorInfo.value.split("\n");
+
+  colors.forEach((color) => {
+    const [index, name] = color.split(" - ");
+    const colorData = colorOptions.find((c) => c.name === name);
+    if (colorData) {
+      const element = document.getElementById(numbers[parseInt(index) - 1]);
+      if (element) {
+        element.style.backgroundColor = colorData.value;
+        element.style.color = getContrastYIQ(colorData.value);
+      }
+    }
+  });
+};
+
+document.getElementById("reset-button").onclick = () => {
+  document.querySelectorAll(".color-picker").forEach((div) => {
+    div.style.backgroundColor = "#FFFFFF";
+    div.style.color = "black";
+  });
+  updateColorInfo();
+};
+
+document.getElementById("randomize-button").onclick = () => {
+  document.querySelectorAll(".color-picker").forEach((div) => {
+    const randomColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+    div.style.backgroundColor = randomColor.value;
+    div.style.color = getContrastYIQ(randomColor.value);
+  });
+  updateColorInfo();
+};
+
+document.getElementById("copy-button").onclick = () => {
+  const colorInfo = document.getElementById("color-info");
+  colorInfo.select();
+  document.execCommand("copy");
+};
