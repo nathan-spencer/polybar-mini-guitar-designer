@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polybar Mini Guitar Designer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <h1>Polybar Mini Guitar Designer</h1>
+  </header>
+  <main>
+    <div class="color-picker-container">
+      <div id="eleven" class="color-picker">
+        <div id="one" class="color-picker">1</div>
+        <div id="two" class="color-picker">2</div>
+        <div id="three" class="color-picker">3</div>
+        <div id="four" class="color-picker">4</div>
+        <div id="five" class="color-picker">5</div>
+        <div id="number-eleven">
+          11
+        </div>
+        <div id="six" class="color-picker">6</div>
+        <div id="eight" class="color-picker">
+          <div id="number-eight">
+            8
+          </div>
+          <div id="seven" class="color-picker">7</div>
+        </div>
+        <div id="nine" class="color-picker">9</div>
+        <div id="ten" class="color-picker">10</div>
+      </div>
+    </div>
+    <div class="output-container">
+      <textarea id="color-info" rows="11" cols="50" readonly></textarea>
+      <button id="copy-button">
+        <i class="fas fa-copy"></i>
+      </button>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Polybar Mini Guitar Designer</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
